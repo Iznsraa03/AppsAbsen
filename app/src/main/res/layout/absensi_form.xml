@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".AbsensiForm">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrowblck"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Form Absensi"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@id/backButton" />
+
+    <!-- Instruction Text -->
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Absen harus disertai dengan foto"
+        android:layout_below="@id/title"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Camera Icon with Text -->
+    <LinearLayout
+        android:id="@+id/cameraLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/instructionText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/cameraIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/cameraicon"/>
+
+        <TextView
+            android:id="@+id/cameraText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ambil Foto"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- Nama Field -->
+    <EditText
+        android:id="@+id/editTextNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cameraLayout"
+        android:layout_marginTop="16dp"
+        android:hint="Nama"
+        android:minHeight="48dp" />
+
+    <!-- Nim Field -->
+    <EditText
+        android:id="@+id/editTextNim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNama"
+        android:layout_marginTop="16dp"
+        android:hint="Nim"
+        android:minHeight="48dp" />
+
+    <!-- Tanggal Field -->
+    <EditText
+        android:id="@+id/editTextTanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNim"
+        android:layout_marginTop="16dp"
+        android:hint="Tanggal"
+        android:minHeight="48dp" />
+
+    <!-- Status Radio Buttons -->
+    <LinearLayout
+        android:id="@+id/statusLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/editTextTanggal"
+        android:layout_marginTop="16dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxHadir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hadir" />
+
+        <CheckBox
+            android:id="@+id/checkBoxAlfa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alfa"
+            android:layout_marginStart="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxIzin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Izin"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Keterangan Field -->
+    <EditText
+        android:id="@+id/editTextKeterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Keterangan"
+        android:layout_below="@id/statusLayout"
+        android:layout_marginTop="16dp"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:gravity="top|start" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonSelesai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selesai"
+        android:layout_below="@id/editTextKeterangan"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/toolbarIconColor"
+        android:textColor="@android:color/white"/>
+</RelativeLayout>
