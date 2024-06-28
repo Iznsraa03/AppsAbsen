@@ -11,7 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginPage : AppCompatActivity() {
 
-    private lateinit var editTextNama: EditText
+    private lateinit var editTextEmail: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var buttonLogin: Button
     private lateinit var buttonSignIn: Button
@@ -19,11 +19,11 @@ class LoginPage : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate;/(savedInstanceState)
+        super.onCreate(savedInstanceState)
 
         setContentView(R.layout.login_page)
 
-        editTextNama = findViewById(R.id.editTextNama)
+        editTextEmail = findViewById(R.id.editTextEmail)
         editTextPassword = findViewById(R.id.editTextPassword)
         buttonLogin = findViewById(R.id.buttonLogin)
         buttonSignIn = findViewById(R.id.buttonSignIn)
@@ -40,11 +40,11 @@ class LoginPage : AppCompatActivity() {
     }
 
     private fun validateInputs() {
-        val nama = editTextNama.text.toString().trim()
+        val email = editTextEmail.text.toString().trim()
         val password = editTextPassword.text.toString().trim()
 
-        if (TextUtils.isEmpty(nama)) {
-            editTextNama.error = "Nama harus diisi"
+        if (TextUtils.isEmpty(email)) {
+            editTextEmail.error = "Email harus diisi"
             return
         }
 
@@ -55,7 +55,7 @@ class LoginPage : AppCompatActivity() {
 
         // Query Firestore to validate user credentials
         db.collection("users")
-            .whereEqualTo("nama", nama)
+            .whereEqualTo("email", email)
             .whereEqualTo("pass", password)
             .get()
             .addOnSuccessListener { documents ->

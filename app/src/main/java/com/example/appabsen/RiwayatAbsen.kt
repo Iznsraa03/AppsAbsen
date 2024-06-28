@@ -52,9 +52,10 @@ class RiwayatAbsen : AppCompatActivity() {
                     val mataKuliah = document.getString("matkul") ?: ""
                     val tanggal = document.getString("tanggal") ?: ""
                     val imageUrl = document.getString("imageUrl") ?: ""
+                    val status = document.getString("status")?:""
 
 
-                    val absensi = RAbsensi(nama, nim, mataKuliah, tanggal, imageUrl)
+                    val absensi = RAbsensi(nama, nim, mataKuliah, tanggal, imageUrl, status)
                     absensiList.add(absensi)
                 }
                 absensiAdapter.notifyDataSetChanged() // Notify adapter that data set has changed
