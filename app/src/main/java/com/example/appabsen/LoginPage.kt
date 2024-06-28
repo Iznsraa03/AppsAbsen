@@ -19,7 +19,8 @@ class LoginPage : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate;/(savedInstanceState)
+
         setContentView(R.layout.login_page)
 
         editTextNama = findViewById(R.id.editTextNama)

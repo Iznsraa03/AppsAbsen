@@ -8,10 +8,12 @@ data class RAbsensi(
     val nim: String,
     val mataKuliah: String,
     val tanggal: String,
-    val imageUrl: String
+    val imageUrl: String,
+    val status: String
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
@@ -30,6 +32,7 @@ data class RAbsensi(
         dest.writeString(mataKuliah)
         dest.writeString(tanggal)
         dest.writeString(imageUrl)
+        dest.writeString(status)
 
     }
 

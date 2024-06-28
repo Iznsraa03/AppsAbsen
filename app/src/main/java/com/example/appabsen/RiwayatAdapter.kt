@@ -23,6 +23,7 @@ class RiwayatAdapter(private val absensiList: List<RAbsensi>) : RecyclerView.Ada
         holder.textViewNim.text = absensi.nim
         holder.textViewMataKuliah.text = absensi.mataKuliah
         holder.textViewTanggal.text = absensi.tanggal
+        holder.textStatus.text = absensi.status
 
         // Load image using Glide or any other image loading library
         Glide.with(holder.itemView.context)
@@ -40,5 +41,6 @@ class RiwayatAdapter(private val absensiList: List<RAbsensi>) : RecyclerView.Ada
         val textViewMataKuliah: TextView = itemView.findViewById(R.id.textMataKuliah)
         val textViewTanggal: TextView = itemView.findViewById(R.id.textTglAbsen)
         val imageView: ImageView = itemView.findViewById(R.id.Rimg)
+        val textStatus: TextView = itemView.findViewById(R.id.textStat)
     }
 }

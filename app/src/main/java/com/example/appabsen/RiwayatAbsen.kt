@@ -53,6 +53,7 @@ class RiwayatAbsen : AppCompatActivity() {
                     val tanggal = document.getString("tanggal") ?: ""
                     val imageUrl = document.getString("imageUrl") ?: ""
 
+
                     val absensi = RAbsensi(nama, nim, mataKuliah, tanggal, imageUrl)
                     absensiList.add(absensi)
                 }

@@ -10,7 +10,7 @@ data class Absensi(
     val mataKuliah: String,
     val keterangan: String,
     val tanggal: String,
-    val imageUrl: String
+    val imageUrl: String,
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
